@@ -3,6 +3,8 @@ package ma.emsi.sadik.springdatarest_tp.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -16,4 +18,7 @@ public class Centre {
 
     private String nom_centre;
     private String adresse;
+
+    @OneToMany(mappedBy = "centre")
+    private List<Etudiant> etudiants;
 }
